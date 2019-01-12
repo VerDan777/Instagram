@@ -8,15 +8,32 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system);
         button.translatesAutoresizingMaskIntoConstraints = false;
-        button.setImage(UIImage(named: "plus_photo"), for: .normal)
+        button.setImage(UIImage(named: "plus_photo")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        
+        button.addTarget(self, action: #selector(pickImage), for: .touchUpInside)
         return button;
     }()
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editImage = info[.editedImage] as? UIImage {
+            plusPhotoButton.setImage(editImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        } else if let orImage = info[.originalImage] as? UIImage {
+            plusPhotoButton.setImage(orImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        }
+        plusPhotoButton.layer.cornerRadius = plusPhotoButton.frame.width / 2;
+        plusPhotoButton.layer.masksToBounds = true;
+        plusPhotoButton.layer.borderWidth = 3;
+        plusPhotoButton.layer.borderColor = UIColor.black.cgColor
+        self.dismiss(animated: true, completion: nil);
+    }
     
     let emailTextField: UITextField = {
         let tf = UITextField();
@@ -87,28 +104,65 @@ class ViewController: UIViewController {
         }
     }
     
+    @objc func pickImage() {
+        let picker = UIImagePickerController();
+        picker.allowsEditing = true;
+        picker.delegate = self;
+        present(picker, animated: true);
+    }
+    
     @objc func handleSignUp() {
         guard let email = emailTextField.text else { return };
         guard let password = passwordTextField.text else { return };
-
-//        self.view.addSubview(activityIndicator);
-//        
-//        activityIndicator.anchor(top: signUpButton.topAnchor, bottom: signUpButton.bottomAnchor, left: signUpButton.leftAnchor, right: nil, height: 25, width: 25, paddingTop: 10, paddingBottom: 10, paddingLeft: 10, paddingRight: 0)
 
         Auth.auth().createUser(withEmail: email, password: password, completion: { (authResult, error: Error?) in
             if let error = error {
                 print("erorr:", error);
                 return;
             }
-//            DispatchQueue.main.async {
-//                self.activityIndicator.stopAnimating()
-//            }
             
-            let ac = UIAlertController(title: "Successfully", message: "sign up", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            ac.addAction(ok);
-            self.present(ac, animated: true);
-            print("sign up", authResult?.user.email ?? "");
+            guard let image = self.plusPhotoButton.imageView?.image else { return };
+            guard let uploadData = image.jpegData(compressionQuality: 0.75) else { return };
+            let filename = NSUUID().uuidString
+
+            Storage.storage().reference().child("profile_images").child(filename).putData(uploadData, metadata: nil) {
+                (metadata, err) in
+                if let err = err {
+                    print("failed", err);
+                }
+                
+                Storage.storage().reference().child("profile_images").child(filename).downloadURL(completion: {
+                    (url, error) in
+                    if let err = error {
+                        print("failed", err)
+                    }
+                    
+                    guard let id = authResult?.user.uid else { return }
+                    guard let url = url else { return }
+                    
+                    let dictinary: [String: Any] = [
+                        "username": self.userTextField.text!,
+                        "profile_image_url": url.absoluteString
+                    ];
+                    
+                    let values = [id: dictinary];
+                    
+                    let ref = Database.database().reference();
+                    
+                    ref.child("users").updateChildValues(values) { (err, ref) in
+                        if let error = err {
+                            print("Failed", error)
+                            return
+                        }
+                        
+                        
+                        
+                    }
+                    
+                })
+               
+            }
+            
         })
     }
 
@@ -120,7 +174,7 @@ class ViewController: UIViewController {
         
         
         plusPhotoButton.heightAnchor.constraint(equalToConstant: 140).isActive = true;
-        plusPhotoButton.widthAnchor.constraint(equalToConstant: 300).isActive = true;
+        plusPhotoButton.widthAnchor.constraint(equalToConstant: 140).isActive = true;
         plusPhotoButton.topAnchor.constraint(equalTo:view.topAnchor, constant: 40).isActive = true;
         plusPhotoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true;
         
