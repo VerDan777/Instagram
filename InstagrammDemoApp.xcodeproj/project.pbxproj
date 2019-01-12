@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6CBC60663A09158DBAAA77D2 /* Pods_InstagrammDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950C9672EBEAA7463DDAE4EB /* Pods_InstagrammDemoApp.framework */; };
+		AD094AA621EA613000673089 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AA521EA613000673089 /* CustomTabBarController.swift */; };
+		AD094AA821EA63B200673089 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AA721EA63B200673089 /* UserProfileController.swift */; };
+		AD094AAA21EA6FA200673089 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AA921EA6FA200673089 /* UserProfileHeader.swift */; };
 		ADE155D521E9EA42003953AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE155D421E9EA42003953AB /* AppDelegate.swift */; };
 		ADE155D721E9EA42003953AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE155D621E9EA42003953AB /* ViewController.swift */; };
 		ADE155DA21E9EA42003953AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE155D821E9EA42003953AB /* Main.storyboard */; };
@@ -22,6 +25,9 @@
 		1513C17511187AB628E02289 /* Pods-InstagrammDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagrammDemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagrammDemoApp/Pods-InstagrammDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		6ADF3F0FAFB487B74DE2D465 /* Pods-InstagrammDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagrammDemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstagrammDemoApp/Pods-InstagrammDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		950C9672EBEAA7463DDAE4EB /* Pods_InstagrammDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagrammDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD094AA521EA613000673089 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		AD094AA721EA63B200673089 /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
+		AD094AA921EA6FA200673089 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
 		ADE155D121E9EA42003953AB /* InstagrammDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagrammDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE155D421E9EA42003953AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADE155D621E9EA42003953AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,12 +84,15 @@
 				ADE155EB21EA0E64003953AB /* Utils */,
 				ADE155D421E9EA42003953AB /* AppDelegate.swift */,
 				ADE155D621E9EA42003953AB /* ViewController.swift */,
+				AD094AA521EA613000673089 /* CustomTabBarController.swift */,
 				ADE155D821E9EA42003953AB /* Main.storyboard */,
 				ADE155DE21E9EA47003953AB /* Assets.xcassets */,
 				ADE155E021E9EA47003953AB /* LaunchScreen.storyboard */,
 				ADE155E321E9EA47003953AB /* Info.plist */,
 				ADE155EE21EA1A08003953AB /* GoogleService-Info.plist */,
 				ADE155DB21E9EA42003953AB /* InstagrammDemoApp.xcdatamodeld */,
+				AD094AA721EA63B200673089 /* UserProfileController.swift */,
+				AD094AA921EA6FA200673089 /* UserProfileHeader.swift */,
 			);
 			path = InstagrammDemoApp;
 			sourceTree = "<group>";
@@ -233,7 +242,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADE155D721E9EA42003953AB /* ViewController.swift in Sources */,
+				AD094AAA21EA6FA200673089 /* UserProfileHeader.swift in Sources */,
 				ADE155D521E9EA42003953AB /* AppDelegate.swift in Sources */,
+				AD094AA821EA63B200673089 /* UserProfileController.swift in Sources */,
+				AD094AA621EA613000673089 /* CustomTabBarController.swift in Sources */,
 				ADE155DD21E9EA42003953AB /* InstagrammDemoApp.xcdatamodeld in Sources */,
 				ADE155ED21EA0E82003953AB /* Extensions.swift in Sources */,
 			);
