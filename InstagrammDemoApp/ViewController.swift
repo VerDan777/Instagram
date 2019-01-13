@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseStorage
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system);
@@ -155,8 +155,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                             return
                         }
                         
-                        
-                        
                     }
                     
                 })
@@ -168,7 +166,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .white
         view.addSubview(plusPhotoButton);
         view.addSubview(emailTextField);
         
@@ -199,7 +197,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         view.addSubview(stackview);
     
-        stackview.anchor(top: plusPhotoButton.bottomAnchor, bottom: nil, left: view.leftAnchor, right: view.rightAnchor,height: 200, width: 300, paddingTop: 40, paddingBottom: 0, paddingLeft: 40, paddingRight: -40);
+        stackview.anchor(top: plusPhotoButton.bottomAnchor, bottom: nil, left: view.leftAnchor, right: view.rightAnchor,height: 200, width: 300, paddingTop: 40, paddingBottom: 0, paddingLeft: 40, paddingRight: 40);
     }
 
 }

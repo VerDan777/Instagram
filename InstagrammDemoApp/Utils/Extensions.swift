@@ -41,15 +41,15 @@ extension UIView {
         }
         
         if let right = right {
-            self.rightAnchor.constraint(equalTo: right, constant: paddingRight).isActive = true;
+            self.rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true;
         }
         
-        if let height = height {
-            self.heightAnchor.constraint(equalToConstant: height).isActive = true;
+        if height != 0 {
+            self.heightAnchor.constraint(equalToConstant: height!).isActive = true;
         }
         
-        if let width = width {
-            self.widthAnchor.constraint(equalToConstant: width).isActive = true;
+        if width != 0 {
+            self.widthAnchor.constraint(equalToConstant: width!).isActive = true;
         }
         
     }

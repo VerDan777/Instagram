@@ -11,6 +11,13 @@
 		AD094AA621EA613000673089 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AA521EA613000673089 /* CustomTabBarController.swift */; };
 		AD094AA821EA63B200673089 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AA721EA63B200673089 /* UserProfileController.swift */; };
 		AD094AAA21EA6FA200673089 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AA921EA6FA200673089 /* UserProfileHeader.swift */; };
+		AD094AAC21EB7E1000673089 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AAB21EB7E1000673089 /* SignInViewController.swift */; };
+		AD094AAE21EB990900673089 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AAD21EB990900673089 /* HomeViewController.swift */; };
+		AD094AB021EBA0E500673089 /* PhotoSelectorCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AAF21EBA0E500673089 /* PhotoSelectorCollectionViewController.swift */; };
+		AD094AB221EBAC6500673089 /* PhotoSelectorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AB121EBAC6500673089 /* PhotoSelectorCollectionViewCell.swift */; };
+		AD094AB421EBB27500673089 /* PhotoCollectionViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AB321EBB27500673089 /* PhotoCollectionViewHeaderCell.swift */; };
+		AD094AB621EBBD2400673089 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AB521EBBD2400673089 /* FeedViewController.swift */; };
+		AD094AB821EBC1F500673089 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AB721EBC1F500673089 /* CameraViewController.swift */; };
 		ADE155D521E9EA42003953AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE155D421E9EA42003953AB /* AppDelegate.swift */; };
 		ADE155D721E9EA42003953AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE155D621E9EA42003953AB /* ViewController.swift */; };
 		ADE155DA21E9EA42003953AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE155D821E9EA42003953AB /* Main.storyboard */; };
@@ -28,6 +35,13 @@
 		AD094AA521EA613000673089 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		AD094AA721EA63B200673089 /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		AD094AA921EA6FA200673089 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
+		AD094AAB21EB7E1000673089 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		AD094AAD21EB990900673089 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AD094AAF21EBA0E500673089 /* PhotoSelectorCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorCollectionViewController.swift; sourceTree = "<group>"; };
+		AD094AB121EBAC6500673089 /* PhotoSelectorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorCollectionViewCell.swift; sourceTree = "<group>"; };
+		AD094AB321EBB27500673089 /* PhotoCollectionViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewHeaderCell.swift; sourceTree = "<group>"; };
+		AD094AB521EBBD2400673089 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		AD094AB721EBC1F500673089 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		ADE155D121E9EA42003953AB /* InstagrammDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagrammDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE155D421E9EA42003953AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADE155D621E9EA42003953AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +107,13 @@
 				ADE155DB21E9EA42003953AB /* InstagrammDemoApp.xcdatamodeld */,
 				AD094AA721EA63B200673089 /* UserProfileController.swift */,
 				AD094AA921EA6FA200673089 /* UserProfileHeader.swift */,
+				AD094AAB21EB7E1000673089 /* SignInViewController.swift */,
+				AD094AAD21EB990900673089 /* HomeViewController.swift */,
+				AD094AAF21EBA0E500673089 /* PhotoSelectorCollectionViewController.swift */,
+				AD094AB121EBAC6500673089 /* PhotoSelectorCollectionViewCell.swift */,
+				AD094AB321EBB27500673089 /* PhotoCollectionViewHeaderCell.swift */,
+				AD094AB521EBBD2400673089 /* FeedViewController.swift */,
+				AD094AB721EBC1F500673089 /* CameraViewController.swift */,
 			);
 			path = InstagrammDemoApp;
 			sourceTree = "<group>";
@@ -241,12 +262,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD094AB421EBB27500673089 /* PhotoCollectionViewHeaderCell.swift in Sources */,
 				ADE155D721E9EA42003953AB /* ViewController.swift in Sources */,
 				AD094AAA21EA6FA200673089 /* UserProfileHeader.swift in Sources */,
 				ADE155D521E9EA42003953AB /* AppDelegate.swift in Sources */,
 				AD094AA821EA63B200673089 /* UserProfileController.swift in Sources */,
+				AD094AB021EBA0E500673089 /* PhotoSelectorCollectionViewController.swift in Sources */,
+				AD094AAC21EB7E1000673089 /* SignInViewController.swift in Sources */,
+				AD094AAE21EB990900673089 /* HomeViewController.swift in Sources */,
+				AD094AB221EBAC6500673089 /* PhotoSelectorCollectionViewCell.swift in Sources */,
 				AD094AA621EA613000673089 /* CustomTabBarController.swift in Sources */,
 				ADE155DD21E9EA42003953AB /* InstagrammDemoApp.xcdatamodeld in Sources */,
+				AD094AB821EBC1F500673089 /* CameraViewController.swift in Sources */,
+				AD094AB621EBBD2400673089 /* FeedViewController.swift in Sources */,
 				ADE155ED21EA0E82003953AB /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
