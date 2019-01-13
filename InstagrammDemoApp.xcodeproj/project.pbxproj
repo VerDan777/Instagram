@@ -18,6 +18,9 @@
 		AD094AB421EBB27500673089 /* PhotoCollectionViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AB321EBB27500673089 /* PhotoCollectionViewHeaderCell.swift */; };
 		AD094AB621EBBD2400673089 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AB521EBBD2400673089 /* FeedViewController.swift */; };
 		AD094AB821EBC1F500673089 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AB721EBC1F500673089 /* CameraViewController.swift */; };
+		AD094ABA21EBD2FB00673089 /* UserProfileCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094AB921EBD2FB00673089 /* UserProfileCellCollectionViewCell.swift */; };
+		AD094ABC21EBE16400673089 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094ABB21EBE16400673089 /* HomeViewCell.swift */; };
+		AD094ABE21EBED3400673089 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD094ABD21EBED3400673089 /* SearchViewController.swift */; };
 		ADE155D521E9EA42003953AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE155D421E9EA42003953AB /* AppDelegate.swift */; };
 		ADE155D721E9EA42003953AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE155D621E9EA42003953AB /* ViewController.swift */; };
 		ADE155DA21E9EA42003953AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE155D821E9EA42003953AB /* Main.storyboard */; };
@@ -42,6 +45,9 @@
 		AD094AB321EBB27500673089 /* PhotoCollectionViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewHeaderCell.swift; sourceTree = "<group>"; };
 		AD094AB521EBBD2400673089 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		AD094AB721EBC1F500673089 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		AD094AB921EBD2FB00673089 /* UserProfileCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		AD094ABB21EBE16400673089 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		AD094ABD21EBED3400673089 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ADE155D121E9EA42003953AB /* InstagrammDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagrammDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE155D421E9EA42003953AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADE155D621E9EA42003953AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +120,9 @@
 				AD094AB321EBB27500673089 /* PhotoCollectionViewHeaderCell.swift */,
 				AD094AB521EBBD2400673089 /* FeedViewController.swift */,
 				AD094AB721EBC1F500673089 /* CameraViewController.swift */,
+				AD094AB921EBD2FB00673089 /* UserProfileCellCollectionViewCell.swift */,
+				AD094ABB21EBE16400673089 /* HomeViewCell.swift */,
+				AD094ABD21EBED3400673089 /* SearchViewController.swift */,
 			);
 			path = InstagrammDemoApp;
 			sourceTree = "<group>";
@@ -263,8 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD094AB421EBB27500673089 /* PhotoCollectionViewHeaderCell.swift in Sources */,
+				AD094ABC21EBE16400673089 /* HomeViewCell.swift in Sources */,
 				ADE155D721E9EA42003953AB /* ViewController.swift in Sources */,
+				AD094ABE21EBED3400673089 /* SearchViewController.swift in Sources */,
 				AD094AAA21EA6FA200673089 /* UserProfileHeader.swift in Sources */,
+				AD094ABA21EBD2FB00673089 /* UserProfileCellCollectionViewCell.swift in Sources */,
 				ADE155D521E9EA42003953AB /* AppDelegate.swift in Sources */,
 				AD094AA821EA63B200673089 /* UserProfileController.swift in Sources */,
 				AD094AB021EBA0E500673089 /* PhotoSelectorCollectionViewController.swift in Sources */,

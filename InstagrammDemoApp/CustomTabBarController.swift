@@ -41,20 +41,24 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func setupViewControllers() {
+        let layout = UICollectionViewFlowLayout();
         // home
-        let homeController = HomeViewController();
+        
+        let homeController = HomeViewController(collectionViewLayout: layout);
         let navHomeController = UINavigationController(rootViewController: homeController)
         navHomeController.tabBarItem.image = UIImage(named: "home_unselected")
         navHomeController.tabBarItem.selectedImage = UIImage(named: "home_selected")
         
         // search
-        let searchController = UIViewController();
+        let searchController = SearchViewController();
+        searchController.view.backgroundColor = .white
         let navSearchController = UINavigationController(rootViewController: searchController)
         navSearchController.tabBarItem.image = UIImage(named: "search_unselected")
         navSearchController.tabBarItem.selectedImage = UIImage(named: "search_selected")
         
         // add
         let addController = UIViewController();
+        addController.view.backgroundColor = .white
         let navAddController = UINavigationController(rootViewController: addController)
         navAddController.tabBarItem.image = UIImage(named: "plus_unselected")
         navAddController.tabBarItem.selectedImage = UIImage(named: "plus_selected")
@@ -62,11 +66,11 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         // feed
         
         let feedController = FeedViewController();
+        feedController.view.backgroundColor = .white
         let feedNavController = UINavigationController(rootViewController: feedController)
         feedNavController.tabBarItem.image = UIImage(named: "like_unselected")
         feedNavController.tabBarItem.selectedImage = UIImage(named: "like_selected")
-        
-        let layout = UICollectionViewFlowLayout();
+    
         
         let userProfile = UserProfileController(collectionViewLayout: layout);
         

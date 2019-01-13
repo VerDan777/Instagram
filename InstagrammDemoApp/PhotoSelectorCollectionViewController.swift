@@ -17,6 +17,7 @@ class PhotoSelectorViewController: UICollectionViewController, UICollectionViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.backgroundColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(handleNext))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.black

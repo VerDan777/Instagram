@@ -12,6 +12,19 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class UserProfileController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    var images: [String] = [
+        "https://images.unsplash.com/photo-1540202404-fad3e2190841?ixlib=rb-1.2.1&ixidvarJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1542841791-3f32162641bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+        "https://images.unsplash.com/photo-1547200413-5f93d7e3673e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+        "https://images.unsplash.com/photo-1547185942-2b5661136b1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+        "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80",
+        "https://images.unsplash.com/photo-1522083165195-3424ed129620?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1160&q=80",
+        "https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80",
+        "https://images.unsplash.com/photo-1506598417715-e3c191368ac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+        "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,10 +33,27 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
         fetchUser();
         
         collectionView?.register(UserProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
-        collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellid")
+        collectionView?.register(UserProfileCellCollectionViewCell.self, forCellWithReuseIdentifier: "cellid")
         
         setupLogoutIcon()
     }
+    
+//    fileprivate func fetchImage() {
+////        guard let imageURL = imageUrl else { return }
+////        guard let url = URL(string: imageURL) else { return }
+////        URLSession.shared.dataTask(with: url) { (data, response, error) in
+////            if let error = error {
+////                print("Failed", error)
+////            }
+////
+////            guard let data = data else { return }
+////
+////            DispatchQueue.main.async {
+////                self.imageView.image = UIImage(data: data)
+////            }
+////
+////            }.resume()
+//    }
     
     fileprivate func setupLogoutIcon() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "gear")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleLogout))
@@ -42,8 +72,16 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
         present(ac, animated: true, completion: nil)
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(images[indexPath.row])
+        
+//        let viewFullController = UIViewController();
+//        viewFullController.view.backgroundColor = .red
+//        self.present(viewFullController, animated: true, completion: nil)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -59,8 +97,9 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
-        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath) as! UserProfileCellCollectionViewCell
+        print(images[indexPath.row])
+        cell.imageUrl = images[indexPath.row]
         return cell
     }
     
@@ -74,6 +113,7 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
         header.user = self.user
         return header;
     }
+    
     var user: User?
     fileprivate func fetchUser() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
